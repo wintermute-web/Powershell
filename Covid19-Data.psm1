@@ -1,5 +1,4 @@
 
-
 function Get-DaysInLockdown{
 
     [DateTime]$start = "23 March 2020"
@@ -170,7 +169,9 @@ function Show-COVIDCases{
     
         [int]$lockdownDays = Get-DaysInLockdown
 
-    }elseif($Country){
+    }
+    
+    if($Country){
         [int]$cases = (Get-Cases -Country $Country).total
         [int]$newCases = (Get-Cases -Country $Country).new
         [int]$deaths = (Get-Cases -Country $Country).deaths
