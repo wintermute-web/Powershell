@@ -1,4 +1,5 @@
 
+
 function Get-DaysInLockdown{
 
     [DateTime]$start = "23 March 2020"
@@ -245,7 +246,11 @@ function Show-COVIDCases{
 
         if($Country){
 
-            Write-Host "Number of $Country days in lockdown: $lockdownDays" -ForegroundColor Cyan
+            if($Country -match "UK"){
+
+                Write-Host "Number of $Country days in lockdown: $lockdownDays" -ForegroundColor Cyan
+            }
+
             Write-Host "Number of $Country cases: $cases" -ForegroundColor Yellow
             Write-Host "Number of new $Country cases: $newCases" -ForegroundColor DarkCyan
             Write-Host "Number of $Country deaths: $deaths" -ForegroundColor Red
@@ -266,18 +271,9 @@ function Show-COVIDCases{
     #endregion
 }
 
-
-Export-ModuleMember -Function Show-COVIDCases
+Export-ModuleMember -Function Show-COVIDCases -Variable MPErrorLogPreference
 
     
-
-
-
-
-
-
-
-
 
 
 
