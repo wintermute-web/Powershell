@@ -271,7 +271,7 @@ function Show-COVIDCases{
     #endregion
 }
 
-Export-ModuleMember -Function Show-COVIDCases -Variable MPErrorLogPreference
+Export-ModuleMember -Function Show-COVIDCases
 
     
 
